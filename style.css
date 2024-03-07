@@ -617,3 +617,8 @@ a.converted_item_options_toggle>span:after {
 .non_exclusive.exclusive_enabled {
 	display: none;
 }
+
+.magnet_collection {
+	width: 60em;
+	margin-bottom: 1rem;
+}

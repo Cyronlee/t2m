@@ -361,6 +361,7 @@ var T2M = (function () {
 			this.options_link = null;
 			this.options_container = null;
 			this.options = null;
+			this.magnet_collection = null;
 		};
 
 
@@ -443,6 +444,7 @@ var T2M = (function () {
 			this.magnet_link.setAttribute("href", magnet_uri);
 			this.magnet_link_text.textContent = magnet_uri;
 			this.magnet_textbox.value = magnet_uri;
+			this.magnet_collection.value += magnet_uri + "\n";
 
 			if (!update_displays) return;
 
@@ -482,6 +484,15 @@ var T2M = (function () {
 				this.container = document.createElement("div");
 				this.container.className = "converted_item";
 
+				let textarea = document.getElementsByClassName("magnet_collection")[0];
+				if (!textarea) {
+					textarea = document.createElement("textarea");
+					textarea.className = "magnet_collection";
+					textarea.rows = 10;
+					textarea.cols = 100;
+					this.container.appendChild(textarea);
+				}
+				this.magnet_collection = textarea;
 
 				// Title
 				n1 = document.createElement("div");
